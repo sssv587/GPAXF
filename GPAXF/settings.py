@@ -130,3 +130,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
 MEDIA_KEY_PREFIX = '/static/uploads/'
 
 INTERNAL_IPS = {'127.0.0.1', 'localhost', }
+
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'sunyuhang@163.com'
+EMAIL_HOST_PASSWORD = '123456'

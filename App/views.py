@@ -1,4 +1,5 @@
 from django.contrib.auth.hashers import make_password, check_password
+from django.core.mail import send_mail
 from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
@@ -191,3 +192,13 @@ def check_user(request):
 def logout(request):
     request.session.flush()
     return redirect(reverse('axf:mine'))
+
+
+def send_email(request):
+    subject = 'AXF Activate'
+    message = '<h1>Hello</h1>'
+    from_email = 'sunyuhang@163.com'
+    recipient_list = ['sunyuhang@163.com', ]
+    send_mail(subject=subject, message=message, html_message=message, from_email=from_email,
+              recipient_list=recipient_list)
+    return HttpResponse('Send Success')
